@@ -144,7 +144,18 @@ namespace WindowsFormsApplication1
                 errorProvider1.SetError(textBox3, "کد ملی باید ۱۰ رقم باشد");
                 isValid = false;
             }
-           
+            if (!IsValidIranianNationalCode(textBox3.Text))
+             {
+              errorProvider1.SetError(textBox3, "کد ملی نامعتبر است");
+              isValid = false;
+             }
+            if (!Regex.IsMatch(textBox5.Text, @"^\d+$"))
+            {
+              errorProvider1.SetError(textBox5, "کد پرسنلی باید فقط شامل عدد باشد");
+              isValid = false;
+            }
+
+
             if (comboBoxDepartment.SelectedItem == null)
             {
                 errorProvider1.SetError(comboBoxDepartment, "لطفاً یک اداره انتخاب کنید");
