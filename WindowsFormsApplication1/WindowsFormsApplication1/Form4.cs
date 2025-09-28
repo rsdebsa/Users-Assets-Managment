@@ -40,10 +40,10 @@ namespace WindowsFormsApplication1
             dgvData.MouseEnter += (s, e) => { if (dgvData.Enabled) dgvData.Focus(); };
             dgvData.MouseDown += (s, e) => dgvData.Focus();
 
-
-            txtSearch.Enter += textBox1_Enter;
-            txtSearch.Leave += textBox1_Leave;
-            txtSearch.KeyDown += textBox1_KeyDown;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            //txtSearch.Enter += textBox1_Enter;
+            //txtSearch.Leave += textBox1_Leave;
+            //txtSearch.KeyDown += textBox1_KeyDown;
             comboBoxSort.SelectedIndexChanged += comboBoxSort_SelectedIndexChanged;
             dgvData.CellClick += dgvData_CellClick;
         }
@@ -167,14 +167,14 @@ namespace WindowsFormsApplication1
             });
             comboBoxSort.SelectedIndex = 0;
         }
-        private void textBox1_Leave(object sender, EventArgs e)
+        /*private void textBox1_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtSearch.Text))
             {
                 txtSearch.Text = "کد ملی یا کد پرسنلی را وارد کنید";
                 txtSearch.ForeColor = Color.Gray;
             }
-        }
+        }*/
         private void SetupDataGridView()
         {
             dgvData.AutoGenerateColumns = false;
@@ -194,7 +194,7 @@ namespace WindowsFormsApplication1
             dgvData.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Itype", Name = "Itype", Visible = false });
         }
 
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        /*private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -260,6 +260,22 @@ namespace WindowsFormsApplication1
 
 
             }
+        }*/
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (dtData == null) return;
+
+            // از همان placeholder که SetPlaceholder استفاده می‌کند استفاده کن
+            const string placeholder = "کد ملی یا کد پرسنلی یا نام را وارد کنید";
+            string searchText = txtSearch.Text.Trim();
+
+            // اگر متن با placeholder برابر است، جستجو را با مقدار خالی اجرا کن
+            if (string.Equals(searchText, placeholder, StringComparison.Ordinal))
+            {
+                searchText = "";
+            }
+
+            LoadData(searchText);
         }
 
         private bool IsFormValid()
@@ -479,15 +495,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            if (txtSearch.Text == "کد ملی یا کد پرسنلی یا نام را وارد کنید")
-            {
-                txtSearch.Text = "";
-                txtSearch.ForeColor = Color.Black;
-            }
-        }
-
+  
 
 
  
@@ -834,7 +842,7 @@ namespace WindowsFormsApplication1
         }
 
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        /*private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string placeholder = "کد ملی یا کد پرسنلی را وارد کنید";
             string searchText = txtSearch.Text.Trim();
@@ -846,6 +854,21 @@ namespace WindowsFormsApplication1
 
             LoadData(searchText);
         }
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string placeholder = "کد ملی یا کد پرسنلی را وارد کنید";
+            string searchText = txtSearch.Text.Trim();
+
+            // به شرطی که ورودی خالی نباشد، load data اجرا شود.
+            if (searchText != placeholder && !string.IsNullOrWhiteSpace(searchText))
+            {
+                LoadData(searchText);
+            }
+            else
+            {
+                LoadData(); // بارگذاری داده‌ها بدون فیلتر
+            }
+        }*/
 
 
         private void txtExperience_TextChanged(object sender, EventArgs e)
