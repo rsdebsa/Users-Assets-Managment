@@ -203,69 +203,9 @@ namespace WindowsFormsApplication1
 
             return (remainder < 2 && checkDigit == remainder) ||
                    (remainder >= 2 && checkDigit == (11 - remainder));
-        }*/
-
-
-        /*private bool CheckDuplicate(string inid, int iusercode)
-        {
-            string query = @"
-            SELECT COUNT(*) 
-            FROM Users 
-            WHERE Inid = ? OR Iusercode = ?";
-            try
-            {
-                using (OleDbConnection conn = new OleDbConnection(connectionString))
-                {
-                    conn.Open();
-                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
-                    {
-                        cmd.Parameters.Add("?", OleDbType.VarChar).Value = inid;
-                        //cmd.Parameters.Add("?", OleDbType.Integer).Value = iusercode;
-
-                        object result = cmd.ExecuteScalar();
-                        int count = Convert.ToInt32(result);
-                        return count > 0;
-                    }
-                }
-            }
-            
-            catch (Exception ex)
-            {
-                MessageBox.Show("خطا در بررسی تکراری بودن: " + ex.Message);
-                return true;
-            }
-
-            string query2 = @"SELECT COUNT(*) 
-            FROM Users 
-            WHERE Inid = ? OR Iusercode = ?;
-
-            SELECT COUNT(*) 
-            FROM UsersHis 
-            WHERE Inid = ? OR Iusercode = ?";
-            try
-            {
-
-                using (OleDbConnection conn = new OleDbConnection(connectionString))
-                {
-                    conn.Open();
-                    using (OleDbCommand cmd = new OleDbCommand(query2, conn))
-                    {
-                        //cmd.Parameters.Add("?", OleDbType.VarChar).Value = inid;
-                        cmd.Parameters.Add("?", OleDbType.Integer).Value = iusercode;
-
-                        object result = cmd.ExecuteScalar();
-                        int count = Convert.ToInt32(result);
-                        return count > 0;
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-
-                MessageBox.Show("خطا در بررسی تکراری بودن: " + ex.Message);
-                return true;
-            }
         }
+
+
         private bool CheckDuplicate(string inid, int iusercode)
         {
             try
