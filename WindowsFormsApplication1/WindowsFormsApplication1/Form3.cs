@@ -81,11 +81,11 @@ namespace WindowsFormsApplication1
                                                   MessageBoxButtons.YesNo,
                                                   MessageBoxIcon.Question);
 
-            if (result == DialogResult.No)
+            if (result == DialogResult.Yes)
             {
-                e.Cancel = true;
+                Application.Exit();
             }
-    }
+        }
 
         private void button5_MouseHover(object sender, EventArgs e)
         {
@@ -177,19 +177,15 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string dbPath = Properties.Settings.Default.DatabasePath;
+            DialogResult result = MessageBox.Show("آیا مطمئن هستید که می‌خواهید خارج شوید؟",
+                                                "خروج از برنامه",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question);
 
-            if (string.IsNullOrWhiteSpace(dbPath) || !System.IO.File.Exists(dbPath))
+            if (result == DialogResult.Yes)
             {
-                MessageBox.Show("لطفاً ابتدا دیتابیس خود را انتخاب کنید ❌",
-                                "خطا", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                Application.Exit();
             }
-
-            this.Hide();
-
-            Form1 form1 = new Form1();
-            form1.Show();
         }
     }
 }
