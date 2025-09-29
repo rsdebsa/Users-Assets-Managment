@@ -81,7 +81,7 @@ namespace WindowsFormsApplication1
                                                   MessageBoxButtons.YesNo,
                                                   MessageBoxIcon.Question);
 
-            if (result == DialogResult.Yes)
+            if (result == DialogResult.No)
             {
                 Application.Exit();
             }
@@ -177,7 +177,7 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("آیا مطمئن هستید که می‌خواهید خارج شوید؟",
+            /*DialogResult result = MessageBox.Show("آیا مطمئن هستید که می‌خواهید خارج شوید؟",
                                                 "خروج از برنامه",
                                                 MessageBoxButtons.YesNo,
                                                 MessageBoxIcon.Question);
@@ -185,7 +185,7 @@ namespace WindowsFormsApplication1
             if (result == DialogResult.Yes)
             {
                 Application.Exit();
-            }
+            }*/
         }
-    }
+}
 }
