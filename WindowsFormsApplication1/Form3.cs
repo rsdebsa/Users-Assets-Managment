@@ -81,7 +81,7 @@ namespace WindowsFormsApplication1
                                                   MessageBoxButtons.YesNo,
                                                   MessageBoxIcon.Question);
 
-            if (result == DialogResult.No)
+            if (result == DialogResult.Yes)
             {
                 Application.Exit();
             }
