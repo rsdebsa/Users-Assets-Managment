@@ -128,6 +128,7 @@ C:\My-First_Project\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\
 F:\My-First_Project\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 F:\My-First_Project\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 F:\My-First_Project\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\My-First_Project\WindowsFormsApplication1\bin\Debug\Stimulsoft.Controls.xml
 C:\My-First_Project\WindowsFormsApplication1\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\My-First_Project\WindowsFormsApplication1\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\My-First_Project\WindowsFormsApplication1\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -153,7 +154,6 @@ C:\My-First_Project\WindowsFormsApplication1\bin\Debug\ADODB.dll
 C:\My-First_Project\WindowsFormsApplication1\bin\Debug\Stimulsoft.Base.pdb
 C:\My-First_Project\WindowsFormsApplication1\bin\Debug\Stimulsoft.Base.xml
 C:\My-First_Project\WindowsFormsApplication1\bin\Debug\Stimulsoft.Controls.pdb
-C:\My-First_Project\WindowsFormsApplication1\bin\Debug\Stimulsoft.Controls.xml
 C:\My-First_Project\WindowsFormsApplication1\bin\Debug\Stimulsoft.Controls.Win.pdb
 C:\My-First_Project\WindowsFormsApplication1\bin\Debug\Stimulsoft.Controls.Win.xml
 C:\My-First_Project\WindowsFormsApplication1\bin\Debug\Stimulsoft.Database.pdb
