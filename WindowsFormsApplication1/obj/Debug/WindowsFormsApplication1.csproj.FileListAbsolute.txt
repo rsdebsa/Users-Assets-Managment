@@ -191,3 +191,4 @@ C:\My-First_Project\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.
 C:\My-First_Project\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\My-First_Project\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\My-First_Project\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\My-First_Project\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
